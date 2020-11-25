@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Phrase from "./Phrase.js";
 
 function App() {
+  const ex = [
+    [1, "aaa"],
+    [2, "bbb"],
+    [3, "ccc"],
+  ];
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {ex.map((row, index) => (
+        <Phrase number={row[0]} contents={row[1]} key={index} />
+      ))}
     </div>
   );
 }
